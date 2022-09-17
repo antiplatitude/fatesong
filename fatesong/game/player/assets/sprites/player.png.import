@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-cffe16cca85bcef084ebffd7cd4aa34c.stex"
+path="res://.import/player.png-f81fe31645f574241cc8f6f6a96ba6d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fatesong/player/assets/sprites/player.png"
-dest_files=[ "res://.import/player.png-cffe16cca85bcef084ebffd7cd4aa34c.stex" ]
+source_file="res://fatesong/game/player/assets/sprites/player.png"
+dest_files=[ "res://.import/player.png-f81fe31645f574241cc8f6f6a96ba6d2.stex" ]
 
 [params]
 

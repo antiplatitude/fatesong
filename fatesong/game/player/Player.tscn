@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fatesong/player/assets/sprites/player.png" type="Texture" id=1]
-[ext_resource path="res://fatesong/player/scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://fatesong/game/player/assets/sprites/player.png" type="Texture" id=1]
+[ext_resource path="res://fatesong/game/player/scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
