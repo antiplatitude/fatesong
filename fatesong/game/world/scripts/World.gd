@@ -1,5 +1,6 @@
 extends TileMap
 
+# Procedural Generation
 var random = RandomNumberGenerator.new()
 
 var mapSize := Vector2(512, 512)
@@ -9,13 +10,14 @@ var noise_image = noise.get_image(512, 512)
 
 
 func _ready():
+	# Set up nose
 	random.randomize()
-	
 	noise.seed = random.randi()
 	noise.octaves = 4
 	noise.period = 25.0
 	noise.persistence = 0.5
 	
+	# Generate tiles
 	for i in range(-(mapSize.x / 2), (mapSize.x / 2)):
 		for j in range(-(mapSize.y / 2), (mapSize.y / 2)):
 			var height : float = noise.get_noise_2d(i, j)

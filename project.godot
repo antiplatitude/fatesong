@@ -8,6 +8,52 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "ItemType",
+"class": "AmmoType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/ammo_type.gd"
+}, {
+"base": "Reference",
+"class": "ItemHelpers",
+"language": "GDScript",
+"path": "res://item_helpers.gd"
+}, {
+"base": "Resource",
+"class": "ItemType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/item_type.gd"
+}, {
+"base": "ItemType",
+"class": "MoneyType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/money_type.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://fatesong/game/projectiles/Projectile.gd"
+}, {
+"base": "Resource",
+"class": "TypedItem",
+"language": "GDScript",
+"path": "res://fatesong/game/items/typed_item.gd"
+}, {
+"base": "ItemType",
+"class": "WeaponType",
+"language": "GDScript",
+"path": "res://weapon_type.gd"
+} ]
+_global_script_class_icons={
+"AmmoType": "",
+"ItemHelpers": "",
+"ItemType": "",
+"MoneyType": "",
+"Projectile": "",
+"TypedItem": "",
+"WeaponType": ""
+}
+
 [application]
 
 config/name="fatesong"
@@ -38,6 +84,11 @@ move_east={
 move_west={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

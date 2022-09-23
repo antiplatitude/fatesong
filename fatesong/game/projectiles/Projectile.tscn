@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fatesong/game/projectiles/assets/sprites/projectile.png" type="Texture" id=1]
+[ext_resource path="res://fatesong/game/projectiles/Projectile.gd" type="Script" id=2]
+
+[node name="Projectile" type="KinematicBody2D"]
+z_index = 100
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="ProjectileSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

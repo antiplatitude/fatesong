@@ -1,19 +1,23 @@
 extends KinematicBody2D
 
-var moveSpeed := 100.0
+var moveSpeed := 128.0
 
 var velocity := Vector2()
 var facingDirection := Vector2()
+var projectile_scene := preload("res://fatesong/game/projectiles/Projectile.tscn")
+
 
 onready var facingRayCast := get_node("PlayerFacingDirection")
-
 
 func _ready():
 	pass
 
 
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("fire"):
+		var projectile = projectile_scene.instance()
+		projectile.position = position
+		get_tree().get_root().add_child(projectile)
 
 
 func _physics_process(delta):
@@ -35,6 +39,4 @@ func _physics_process(delta):
 		velocity.x -=1
 		facingDirection = Vector2(-1, 0)
 	
-	velocity = velocity.normalized()
-	
-	move_and_slide(velocity * moveSpeed)
+	move_and_slide(velocity.normalized() * moveSpeed)
