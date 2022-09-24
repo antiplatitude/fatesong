@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://fatesong/game/items/money_type.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "RigidBody2D",
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://fatesong/game/projectiles/Projectile.gd"
