@@ -10,7 +10,7 @@ var speed: float
 
 func _ready():
 	direction = (get_global_mouse_position() - position).normalized()
-	speed = 1024.0
+	speed = 512.0
 	rotation = direction.angle()
 
 

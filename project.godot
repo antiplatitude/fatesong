@@ -9,13 +9,49 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ItemType",
+"class": "AmmoType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/ammo_type.gd"
+}, {
+"base": "Reference",
+"class": "ItemHelpers",
+"language": "GDScript",
+"path": "res://item_helpers.gd"
+}, {
+"base": "Resource",
+"class": "ItemType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/item_type.gd"
+}, {
+"base": "ItemType",
+"class": "MoneyType",
+"language": "GDScript",
+"path": "res://fatesong/game/items/money_type.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://fatesong/game/projectiles/Projectile.gd"
+}, {
+"base": "Resource",
+"class": "TypedItem",
+"language": "GDScript",
+"path": "res://fatesong/game/items/typed_item.gd"
+}, {
+"base": "ItemType",
+"class": "WeaponType",
+"language": "GDScript",
+"path": "res://weapon_type.gd"
 } ]
 _global_script_class_icons={
-"Projectile": ""
+"AmmoType": "",
+"ItemHelpers": "",
+"ItemType": "",
+"MoneyType": "",
+"Projectile": "",
+"TypedItem": "",
+"WeaponType": ""
 }
 
 [application]

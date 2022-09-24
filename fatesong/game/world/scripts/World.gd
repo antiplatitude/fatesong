@@ -3,17 +3,14 @@ extends TileMap
 # Procedural Generation
 var random = RandomNumberGenerator.new()
 
-const mapSize := Vector2(512, 512)
-const tile_size := 32
+var mapSize := Vector2(512, 512)
 
 var noise = OpenSimplexNoise.new()
 var noise_image = noise.get_image(512, 512)
 
-var enemy_scene := preload("res://fatesong/game/enemies/Enemy.tscn")
-
 
 func _ready():
-	# Set up noise
+	# Set up nose
 	random.randomize()
 	noise.seed = random.randi()
 	noise.octaves = 4
@@ -41,9 +38,6 @@ func _ready():
 			# Snow
 			else:
 				set_cell(i, j, 3)
-			
-			if random.randf() > 0.999 and get_cell(i, j) != 1 and get_cell(i, j) != 2:
-				spawn_enemy_squad(Vector2(i * tile_size, j * tile_size), random.randi_range(3, 6))
 	
 	# Generate sand near water and bare dirt near stone
 	for i in range(-(mapSize.x / 2), (mapSize.x / 2)):
@@ -57,12 +51,5 @@ func _ready():
 				set_cell(i, j, 5)
 
 
-func spawn_enemy_squad(spawn_position: Vector2, squad_size: int):
-	var enemies = []
-	enemies.resize(squad_size)
-	enemies.fill(enemy_scene.instance())
-	
-	for enemy in enemies:
-		var position_offset := Vector2(random.randi_range(-3, 3) * tile_size, random.randi_range(-3, 3) * tile_size)
-		enemy.position = spawn_position + position_offset
-		get_tree().get_root().add_child(enemy)
+#func _process(delta):
+#	pass
