@@ -8,9 +8,11 @@ var mapSize := Vector2(512, 512)
 var noise = OpenSimplexNoise.new()
 var noise_image = noise.get_image(512, 512)
 
+var enemy = preload("res://fatesong/game/enemies/Enemy.tscn")
+
 
 func _ready():
-	# Set up nose
+	# Set up noise
 	random.randomize()
 	noise.seed = random.randi()
 	noise.octaves = 4
@@ -30,6 +32,10 @@ func _ready():
 			# Grass
 			elif height < 0.25:
 				set_cell(i, j, 0)
+				if random.randf() > 0.999:
+					var instance = enemy.instance()
+					get_tree().root.add_child(instance)
+					instance.position = Vector2(i * 32, j * 32)
 			
 			# Stone
 			elif height < 0.5:

@@ -6,7 +6,6 @@ var velocity := Vector2()
 var facingDirection := Vector2()
 var projectile_scene := preload("res://fatesong/game/projectiles/Projectile.tscn")
 
-
 onready var facingRayCast := get_node("PlayerFacingDirection")
 
 func _ready():
@@ -40,3 +39,7 @@ func _physics_process(delta):
 		facingDirection = Vector2(-1, 0)
 	
 	move_and_slide(velocity.normalized() * moveSpeed)
+
+
+func is_hit():
+	queue_free()
