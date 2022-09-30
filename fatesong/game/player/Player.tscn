@@ -7,6 +7,7 @@
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 100
+collision_mask = 30
 script = ExtResource( 2 )
 
 [node name="PlayerCollider" type="CollisionShape2D" parent="."]
@@ -20,3 +21,9 @@ cast_to = Vector2( 0, 26 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+margin_left = -40.0
+margin_top = 37.0
+margin_right = 39.0
+margin_bottom = 64.0

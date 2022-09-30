@@ -2,14 +2,20 @@ extends KinematicBody2D
 
 var moveSpeed := 128.0
 
+var coins: int
 var velocity := Vector2()
 var facingDirection := Vector2()
 var projectile_scene := preload("res://fatesong/game/projectiles/Projectile.tscn")
 
 onready var facingRayCast := get_node("PlayerFacingDirection")
+onready var label := $Camera2D/Label
+
+func _init():
+	coins = 0
+
 
 func _ready():
-	pass
+	label.text = "Coins: 0"
 
 
 func _process(delta):
@@ -17,6 +23,7 @@ func _process(delta):
 		var projectile = projectile_scene.instance()
 		projectile.position = position
 		get_tree().get_root().add_child(projectile)
+		print(coins)
 
 
 func _physics_process(delta):
@@ -43,3 +50,8 @@ func _physics_process(delta):
 
 func is_hit():
 	queue_free()
+
+
+func add_coin():
+	coins += 1
+	label.text = "".join(["Coins: ", coins])

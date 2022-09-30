@@ -18,7 +18,8 @@ func _physics_process(_delta):
 	if _aggro:
 		var collision = move_and_collide((_detected_player.position - position).normalized() * 64 * _delta)
 		if collision:
-			collision.call("is_hit")
+			_detected_player.call("is_hit")
+			_aggro = false
 
 
 func _on_DetectionArea_body_entered(body):

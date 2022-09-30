@@ -7,6 +7,8 @@ class_name Projectile
 var direction: Vector2
 var speed: float
 
+onready var CoinScene = preload("res://fatesong/game/items/Coin.tscn")
+
 
 func _ready():
 	direction = (get_global_mouse_position() - position).normalized()
@@ -19,6 +21,9 @@ func _physics_process(delta):
 	var bodies = get_colliding_bodies()
 	for body in bodies:
 		if body is Enemy:
+			var coin = CoinScene.instance()
+			coin.position = body.position
+			get_tree().get_root().add_child(coin)
 			body.queue_free()
 			queue_free()
 		elif body is TileMap:
