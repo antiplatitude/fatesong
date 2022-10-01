@@ -27,3 +27,5 @@ margin_left = -40.0
 margin_top = 37.0
 margin_right = 39.0
 margin_bottom = 64.0
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]

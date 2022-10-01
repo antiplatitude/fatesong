@@ -8,7 +8,8 @@ var mapSize := Vector2(512, 512)
 var noise = OpenSimplexNoise.new()
 var noise_image = noise.get_image(512, 512)
 
-var enemy = preload("res://fatesong/game/enemies/Enemy.tscn")
+onready var enemy = preload("res://fatesong/game/enemies/Enemy.tscn")
+onready var pause_menu_scene = preload("res://fatesong/menus/pausemenu/PauseMenu.tscn")
 
 
 func _ready():
@@ -57,5 +58,8 @@ func _ready():
 				set_cell(i, j, 5)
 
 
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		var pause_menu_instance = pause_menu_scene.instance()
+		get_tree().current_scene.get_node("Player").add_child(pause_menu_instance)
+		get_tree().paused = true

@@ -23,7 +23,6 @@ func _process(delta):
 		var projectile = projectile_scene.instance()
 		projectile.position = position
 		get_tree().get_root().add_child(projectile)
-		print(coins)
 
 
 func _physics_process(delta):
@@ -49,9 +48,11 @@ func _physics_process(delta):
 
 
 func is_hit():
-	queue_free()
+	get_tree().change_scene("res://fatesong/menus/YouDied.tscn")
 
 
 func add_coin():
 	coins += 1
 	label.text = "".join(["Coins: ", coins])
+	if coins >= 10:
+		get_tree().change_scene("res://fatesong/menus/YouWin.tscn")

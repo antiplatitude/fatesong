@@ -15,11 +15,13 @@ func _init():
 
 
 func _physics_process(_delta):
-	if _aggro:
+	if _aggro and _detected_player != null:
 		var collision = move_and_collide((_detected_player.position - position).normalized() * 64 * _delta)
 		if collision:
 			_detected_player.call("is_hit")
 			_aggro = false
+	else:
+		move_and_collide(Vector2(0, 0))
 
 
 func _on_DetectionArea_body_entered(body):
@@ -29,3 +31,4 @@ func _on_DetectionArea_body_entered(body):
 
 func _on_DetectionArea_body_exited(body):
 	_aggro = false
+	_detected_player = null

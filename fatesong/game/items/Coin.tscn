@@ -44,6 +44,9 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "CoinSpin"
+frame = 1
 playing = true
+
+[node name="CoinPickup" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
