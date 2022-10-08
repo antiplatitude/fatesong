@@ -52,7 +52,11 @@ func is_hit():
 
 
 func add_coin():
+	$CoinSound.play(0.4)
 	coins += 1
 	label.text = "".join(["Coins: ", coins])
 	if coins >= 10:
 		get_tree().change_scene("res://fatesong/menus/YouWin.tscn")
+
+func play_death_sound():
+	$GoblinDeathSound.play(0.25)

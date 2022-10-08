@@ -10,6 +10,7 @@
 
 [node name="GameMusic" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 3 )
+volume_db = -10.0
 autoplay = true
 
 [node name="World" parent="." instance=ExtResource( 2 )]

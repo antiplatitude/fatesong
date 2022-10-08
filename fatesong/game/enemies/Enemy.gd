@@ -27,6 +27,7 @@ func _physics_process(_delta):
 func _on_DetectionArea_body_entered(body):
 	_aggro = true
 	_detected_player = body
+	$AggroSound.play()
 
 
 func _on_DetectionArea_body_exited(body):
