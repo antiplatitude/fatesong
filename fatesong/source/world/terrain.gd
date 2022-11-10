@@ -13,9 +13,6 @@ var _surfaces = {}
 var _random: RandomNumberGenerator
 var _noise: OpenSimplexNoise
 
-#var material_one = preload("res://fatesong/resources/world/materials/test_material_1.tres")
-#var material_two = preload("res://fatesong/resources/world/materials/test_material_2.tres")
-
 
 func _init() -> void:
 	self.mesh = ArrayMesh.new()
@@ -35,7 +32,6 @@ func _init() -> void:
 func _ready() -> void:
 	_random.randomize()
 	_setup_noise(_random.randi(), 4, 25.0, 0.5)
-	
 	_generate_mesh()
 
 
@@ -121,5 +117,3 @@ func _add_point(x: float, y: float) -> void:
 		for j in 3:
 				surface.add_uv(Vector2(0.0, 0.0))
 				surface.add_vertex(Vector3(triangles[i + j]))
-		
-		

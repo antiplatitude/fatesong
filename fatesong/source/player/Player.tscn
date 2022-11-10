@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fatesong/source/player/player.gd" type="Script" id=1]
 [ext_resource path="res://fatesong/source/input/player_movement_component.gd" type="Script" id=2]
+[ext_resource path="res://fatesong/source/items/inventory_component.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -27,6 +28,9 @@ mesh = SubResource( 3 )
 
 [node name="PlayerMovementComponent" type="Spatial" parent="."]
 script = ExtResource( 2 )
+
+[node name="InventoryComponent" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [node name="CameraMount" type="Spatial" parent="."]
 
