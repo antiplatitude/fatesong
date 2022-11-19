@@ -8,10 +8,16 @@ extends Node
 const MAX_ITEMS := 15
 
 var _items: Array
+var _primary: UsableItem
+var _secondary: UsableItem
+var _equipped: UsableItem
 
 
 func _init() -> void:
 	_items = []
+	_primary = null
+	_secondary = null
+	_equipped = null
 
 
 # Add item to inventory.

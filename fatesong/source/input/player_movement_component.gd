@@ -8,6 +8,9 @@ extends MovementComponent
 # call setup to ensure proper functionality
 
 
+signal item_used
+signal item_unused
+
 const Player = preload("res://fatesong/source/player/player.gd")
 
 const MINIMUM_LOOK_ANGLE := -22.5
@@ -38,10 +41,13 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-# Handle discrete inputs
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_mouse_delta = event.relative
+	elif event.is_action_pressed("use"):
+		emit_signal("item_used")
+	elif event.is_action_released("use"):
+		emit_signal("item_unused")
 
 
 # Handle non-physics continuous inputs
@@ -95,10 +101,10 @@ func _physics_process(delta: float) -> void:
 	
 	_velocity.x = relative_velocity.x * _move_speed
 	_velocity.z = relative_velocity.z * _move_speed
+	_player.move_and_slide(_velocity, Vector3.UP, true, 4, 0.9)
+	
 	if not _player.is_on_floor():
 		_player.move_and_collide(Vector3(0.0, -GRAVITY * delta, 0.0))
-	
-	_player.move_and_slide(_velocity, Vector3.UP, true, 4, 0.9)
 
 
 func setup(player: Player, camera_mount: Spatial, camera: Camera) -> void:

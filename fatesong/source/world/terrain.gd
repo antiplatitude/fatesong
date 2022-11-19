@@ -5,6 +5,8 @@ class_name Terrain
 extends MeshInstance
 
 
+var _enemy = preload("res://fatesong/source/enemies/Enemy.tscn")
+
 var _map_size: Vector2 setget set_map_size, get_map_size
 var _height_modifier: float
 var _grass_surface: SurfaceTool
@@ -29,10 +31,19 @@ func _init() -> void:
 	_noise = OpenSimplexNoise.new()
 
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	_random.randomize()
 	_setup_noise(_random.randi(), 4, 25.0, 0.5)
 	_generate_mesh()
+
+
+func _ready() -> void:
+	for i in _map_size.x:
+		for j in _map_size.y:
+			if _random.randf() > 0.9999:
+				var _enemy_instance = _enemy.instance()
+				get_tree().root.get_node("Game").call_deferred("add_child", _enemy_instance)
+				_enemy_instance.call_deferred("global_translate", Vector3(i, 10.0, j))
 
 
 func set_map_size(map_size: Vector2) -> void:

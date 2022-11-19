@@ -36,3 +36,6 @@ script = ExtResource( 3 )
 
 [node name="Camera" type="ClippedCamera" parent="CameraMount"]
 margin = 1.32
+
+[node name="Muzzle" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.27083 )

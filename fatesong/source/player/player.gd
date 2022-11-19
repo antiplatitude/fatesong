@@ -15,6 +15,7 @@ onready var _inventory = $InventoryComponent
 # Setup components
 func _ready() -> void:
 	_movement.setup(self, _camera_mount, _camera)
+	add_child(UsableItem.new($Muzzle, self))
 
 
 # Adds an item to the player's inventory.

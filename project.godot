@@ -9,6 +9,26 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://fatesong/source/enemies/enemy.gd"
+}, {
+"base": "MovementComponent",
+"class": "EnemyMovementComponent",
+"language": "GDScript",
+"path": "res://fatesong/source/input/enemy_movement_component.gd"
+}, {
+"base": "UsePressComponent",
+"class": "FullAutoUsePress",
+"language": "GDScript",
+"path": "res://fatesong/source/items/usable_items/use_press_components/full_auto_use_press.gd"
+}, {
+"base": "UseReleaseComponent",
+"class": "FullAutoUseRelease",
+"language": "GDScript",
+"path": "res://fatesong/source/items/usable_items/use_release_components/full_auto_use_release.gd"
+}, {
 "base": "Node",
 "class": "InventoryComponent",
 "language": "GDScript",
@@ -18,6 +38,11 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://fatesong/source/items/item.gd"
+}, {
+"base": "Node",
+"class": "ItemBehaviorComponent",
+"language": "GDScript",
+"path": "res://fatesong/source/items/usable_items/item_behavior_component.gd"
 }, {
 "base": "Spatial",
 "class": "MovementComponent",
@@ -34,15 +59,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://fatesong/source/input/player_movement_component.gd"
 }, {
+"base": "KinematicBody",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://fatesong/source/combat/projectile.gd"
+}, {
 "base": "MeshInstance",
 "class": "Terrain",
 "language": "GDScript",
 "path": "res://fatesong/source/world/terrain.gd"
 }, {
-"base": "Item",
+"base": "Node",
 "class": "UsableItem",
 "language": "GDScript",
 "path": "res://fatesong/source/items/usable_items/usable_item.gd"
+}, {
+"base": "ItemBehaviorComponent",
+"class": "UsePressComponent",
+"language": "GDScript",
+"path": "res://fatesong/source/items/usable_items/use_press_components/use_press_component.gd"
+}, {
+"base": "ItemBehaviorComponent",
+"class": "UseReleaseComponent",
+"language": "GDScript",
+"path": "res://fatesong/source/items/usable_items/use_release_components/use_release_component.gd"
 }, {
 "base": "Spatial",
 "class": "WorldItem",
@@ -50,13 +90,21 @@ _global_script_classes=[ {
 "path": "res://fatesong/source/items/world_item.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
+"EnemyMovementComponent": "",
+"FullAutoUsePress": "",
+"FullAutoUseRelease": "",
 "InventoryComponent": "",
 "Item": "",
+"ItemBehaviorComponent": "",
 "MovementComponent": "",
 "Player": "",
 "PlayerMovementComponent": "",
+"Projectile": "",
 "Terrain": "",
 "UsableItem": "",
+"UsePressComponent": "",
+"UseReleaseComponent": "",
 "WorldItem": ""
 }
 
@@ -96,9 +144,10 @@ move_left={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
-fire={
+use={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":86,"unicode":0,"echo":false,"script":null)
  ]
 }
 pause={
