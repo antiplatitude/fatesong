@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/globs_of_goop.wav-1b238304197d6317e79f2f07e54adb6c.sample"
+path="res://.import/globs_of_goop.wav-9383e8c2be0a0973d17fe6edd40bc0cf.sample"
 
 [deps]
 
-source_file="res://fatesong/resources/music/globs_of_goop.wav"
-dest_files=[ "res://.import/globs_of_goop.wav-1b238304197d6317e79f2f07e54adb6c.sample" ]
+source_file="res://fatesong/resources/audio/music/globs_of_goop.wav"
+dest_files=[ "res://.import/globs_of_goop.wav-9383e8c2be0a0973d17fe6edd40bc0cf.sample" ]
 
 [params]
 

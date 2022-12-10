@@ -14,16 +14,16 @@ onready var _inventory = $InventoryComponent
 
 # Setup components
 func _ready() -> void:
-	_movement.setup(self, _camera_mount, _camera)
-	add_child(UsableItem.new($Muzzle, self))
+    _movement.setup(self, _camera_mount, _camera)
+    add_child(UsableItem.new($Muzzle, self))
 
 
 # Adds an item to the player's inventory.
 # Returns true on success, false otherwise
 func pickup_item(item: WorldItem) -> bool:
-	if _inventory.has_space():
-		_inventory.add_item(item.get_item())
-		item.queue_free()
-		return true
-	else:
-		return false
+    if _inventory.has_space():
+        _inventory.add_item(item.get_item())
+        item.queue_free()
+        return true
+    else:
+        return false

@@ -14,4 +14,10 @@ onready var _detection_area = $DetectionArea
 
 # Setup components
 func _ready() -> void:
-	_movement_component.setup(self, _detection_area)
+    _movement_component.setup(self, _detection_area)
+
+
+#func _process(_delta) -> void:
+#    if self. is Projectile:
+#        AudioManager.death()
+#        self.free()

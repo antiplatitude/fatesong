@@ -9,8 +9,8 @@ var _counterpart: FullAutoUsePress
 
 
 func _init(counterpart: FullAutoUsePress) -> void:
-	_counterpart = counterpart
+    _counterpart = counterpart
 
 
 func behavior() -> void:
-	_counterpart.unused()
+    _counterpart.unused()
